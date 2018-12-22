@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tarea 1 - DWEC</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h1>Programa 1</h1>
+                <p>Descripcion: Este programa pinta por pantalla todo lo que el usuario escriba en el cuadro emergente.</p>
+                <script>
+                    /*
+                            Pedimos al usuario un texto el cual almacenamos en una variable para que solo llamemos a la variable cuando la imprimamos y no meter el prompt dentro del document.write
+                            */
+                    var msg = prompt("Inserta aqui el texto que quieres que se imprima en la pagina");
+                    document.write("<p>"+msg+"</p>");
+
+                </script>
+            </div>
+            <div class="col-md-6">
+                <h1>Programa 2</h1>
+                <p>Descripcion: Este programa crea una tabla por pantalla en base a l numero que proporcione el usuario.</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>Version 1: Haciendo uso de bucle <strong>for</strong></p>
+
+                        <script>
+                            /*
+                                    se solicita un numero para generarle la tabla de multiplicar.
+                                    */
+                            var msg = prompt("Pon tu numero aqui");
+                            var cabecera = "<table class='table table-striped'><thead><tr><th>Operacion</th><th>Resultado</th></tr></thead><tbody>";
+                            /*
+                            Inyectamos en el html las cabeceras de la tabla.
+                            */
+                            document.write(cabecera);
+
+                            /*
+                            Primero hacemos la generacion haciendo uso de un bucle for
+                            */
+                            for (var i = 1; i <= 10; i++) {
+                                var calculo = msg * i;
+                                var fila = "<tr><td>" + i + "x" + msg + "</td><td>" + calculo + "</td></tr>";
+                                document.write(fila);
+
+                            }
+
+                            document.write("</tbody></table></div>")
+
+                            document.write("<div class='col-md-6'><p>Version 2: Haciendo uso de bucle <strong>while</strong></p>" + cabecera);
+                            //variable generada para controlar la salida del bucle while
+                            var counter = 1;
+                            while (counter <= 10) {
+                                var calculo = msg * counter;
+                                var fila = "<tr><td>" + counter + "x" + msg + "</td><td>" + calculo + "</td></tr>";
+                                document.write(fila);
+                                counter++;
+                            };
+                            document.write("</tbody></table></div>");
+
+                        </script>
+                    </div>
+                    </div>
+                    <div class="col-md-3">
+                        <h1>Programa 3</h1>
+                        <p>Descripcion: Comprobacion que se puede realizar una division entre dos numeros y mostrado del resultado</p>
+
+                        <script>
+                            /*
+                                    Se solicita al usuario que inserte 2 numeros para realizar una division.
+                                    */
+
+                            var dividendo = parseInt(prompt("Pon aqui tu el numero que deseas dividir"));
+                            var divisor = parseInt(prompt("Pon aqui el numero divisor"));
+
+                            /*
+                            Realizamos la comprobacion de que ninguno de los numero introducidos es 0, en caso de que ninguno sea 0 se realiza la division devolviendo al usuario el calculo de la misma.
+                            */
+                            if (dividendo == 0 || isNaN(dividendo)) {
+                                document.write("El numero introducido es un numero no valido para realizar una division");
+                            } else if (divisor == 0 || isNaN(divisor)) {
+                                document.write("El numero introducido es un numero no valido para realizar una division");
+                            } else {
+                                var division = dividendo / divisor;
+                                document.write("<p>El resultado de la division entre " + dividendo + "/" + divisor + " es: <strong>" + division + "</strong>");
+                            }
+
+                        </script>
+
+            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
