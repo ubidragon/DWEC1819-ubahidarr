@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Formulario con HTML5</title>    
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+</head>
+
+<body>
+    <h1>Sección de creación de competición.</h1>
+    <div class="container-fluid">
+        <form id="Inscripcion" name="Inscripcion" method="get" action="">
+            <fieldset>
+                <legend>Inscripción del caballero</legend>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label for="Nombre">* Nombre:
+                            <input type="text" name="nombre" id="nombre" pattern="^.*(?=.{6,40})(?=.*[A-ZÑñáéíóúÁÉÍÓÚa-z\d]).*$" required/></label>
+                        <label for="numParticipantes">Número de Participantes:
+                            <input type="number" name="numParticipantes" id="numParticipantes" min="2" max="100"/></label>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="Descripcion">Descripción:
+                            <input type="textbox" name="Descripcion" id="Descripcion" maxlength="1024"/></label>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="Armas">Armas:
+                        	 <input list="Armas-list" name="Armas" id="Armas"></label>
+                            <datalist name="Armas" id="Armas-list">
+                                <option value="Arco">
+                                <option value="Alfanje">
+                                <option value="Ballesta">
+                                <option value="Espada bastarda">
+                                <option value="Espada Cruzada">
+                                <option value="Gladius">
+                                <option value="Espada Cruzada">
+                                <option value="Lanza">
+                                <option value="Cimitarra">
+                                <option value="Lucero del alba">
+                                <option value="Garrote">
+                            </datalist>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="row">
+                <div class="col-md-3">
+                    <input type="reset" name="Borrar" id="Borrar" value="Borrar Contenidos" />
+                </div>
+                <div class="col-md-3">
+                    <input type="button" name="Enviar" id="Enviar" value="Enviar" />                    
+                </div>
+                 <div class="col-md-3">
+                    <p id="intentos"></p>                    
+                </div>
+        </form>
+    </div>
+     <div id="resultado">
+            <label id='resNombre' type="hidden"></label>
+            <label id='resApellido' type="hidden"></label>
+            <label id='resPassword' type="hidden"></label>
+            <label id='resNacion' type="hidden"></label>
+        </div>
+    <script type="text/javascript" src="formulario5.js"> </script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario sin HTML5</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <h1>Sección de inscripción del caballero</h1>
+    <div class="container-fluid">
+        <form id="Inscripcion" name="Inscripcion" method="post" action="formulario.html">
+            <fieldset>
+                <legend>Inscripción del caballero</legend>
+                <div class="row">
+                    <div class="col-md-3">
+                        <label for="Nombre">Nombre: 
+                        <input type="text" name="Nombre" id="Nombre" /></label>
+                        <label for="Password">Contraseña: 
+                        <input type="text" name="Password" id="Password" /></label>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="Apellido">Apellido: 
+                        <input type="text" name="Apellido" id="Apellido" /></label>
+                        <label for="CheckPass">Contraseña de nuevo: 
+                        <input type="text" name="CheckPass" id="CheckPass" /></label>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="Nacionalidad">Nacionalidad: </label>
+                        <select name="Nacionalidad" id="Nacionalidad">
+                            <option value="Castilla">Castilla</option>
+                            <option value="Galicia">Galicia</option>
+                            <option value="Aragón">Aragón</option>
+                            <option value="Califato de Córdoba">Califato de Córdoba</option>
+                            <option value="Reino de Granada">Reino de Granada</option>
+                            <option value="Francia">Francia</option>
+                            <option value="Inglaterra">Inglaterra</option>
+                            <option value="Sacro Imperio Romano-Germánico">Sacro Imperio Romano-Germánico</option>
+                            <option value="Bretaña">Bretaña</option>
+                            <option value="Imperio Bizantino">Imperio Bizantino</option>
+                            <option value="Califato fatimí">Califato fatimí</option>
+                            <option value="Sultanato ayubí de Egipto y Siria">Sultanato ayubí de Egipto y Siria</option>
+                            <option value="Sultanato mameluco">Sultanato mameluco</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="button" name="Reiniciar" id="Reiniciar" value="Reiniciar" />
+                </div>
+                <div class="col-md-4">
+                    <input type="button" name="LimpiarCampo" id="LimpiarCampo" value="Limpiar Campo Actual" />
+                </div>
+                <div class="col-md-4">
+                    <input type="submit" name="Enviar" id="Enviar" value="Enviar" />
+                </div>
+        </form>
+        <div id="resultado">
+            <label id='resNombre' type="hidden"></label>
+            <label id='resApellido' type="hidden"></label>
+            <label id='resPassword' type="hidden"></label>
+            <label id='resNacion' type="hidden"></label>
+        </div>
+         <script type="text/javascript" src="formulario.js"> </script>
+</body>
+</html>
